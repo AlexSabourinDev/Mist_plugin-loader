@@ -1,0 +1,19 @@
+The Plugin Loader's goal is to be able to load and unload plugins from memory, allowing different systems to be pulled in at runtime and reloaded at runtime
+
+The API should be easily extensible for different platforms as needed and should be able to load dlls by key
+
+The majority of the API should be abstracted from the use of the filesystem, maybe using directory strings such as Test/DllName would look in Test for DllName
+Which has the format Child/Child/.../DllName.
+
+Example usage:
+
+{
+	PluginLoader loader(DefaultDirectory/Plugins)
+
+	Plugin* loadedPlugin = loader.Load(SomePlugin);
+
+	loader.Unload(loadedPlugin)
+}
+
+
+This would require the 
