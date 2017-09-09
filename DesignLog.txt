@@ -8,11 +8,17 @@ Which has the format Child/Child/.../DllName.
 Example usage:
 
 {
-	PluginLoader loader(DefaultDirectory/Plugins)
+	Plugin loadedPlugin = Plugin::Load("ActiveDirectory");
 
-	Plugin* loadedPlugin = loader.Load(SomePlugin);
+	// Possible uses:
+	PluginAPI<void> call = loadedPlugin.GetAPI<voi>("Callback");
+	void(*otherCall)() = loadedPlugin.GetAPI<voi>("Callback");
 
-	loader.Unload(loadedPlugin)
+	// I'd also like to be able to load a dll from raw data, I'll probablt have to expand the LoadLibrary macro
+
+	Plugin::Unload(loadedPlugin);
+
+	Plugin fromDataPlugin = Plugin::Load(someData);
 }
 
 
