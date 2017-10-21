@@ -31,7 +31,7 @@ namespace Plugin {
 
 		// If this fails Plugin was not loaded or failed to load
 		MIST_ASSERT(handle != nullptr);
-		return reinterpret_cast< API<ReturnType, Args...> >(GetProcAddress(handle, apiName));
+		return reinterpret_cast< API<ReturnType, Args...> >(GetProcAddress((HMODULE)handle, apiName));
 	}
 }
 
