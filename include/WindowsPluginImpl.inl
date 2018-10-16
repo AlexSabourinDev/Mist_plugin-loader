@@ -2,7 +2,7 @@
 
 #ifdef MIST_WINDOWS
 
-#include <Mist_Common/include/UtilityMacros.h>
+#include <Mist_common/include/UtilityMacros.h>
 #include "PluginPlatform.h"
 
 #include <Windows.h>
