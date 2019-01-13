@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Mist_Common/include/UtilityMacros.h>
+#include <Mist_common/include/UtilityMacros.h>
 #include "PluginPlatform.h"
 
 MIST_NAMESPACE
@@ -31,6 +31,8 @@ namespace Plugin {
 
 MIST_NAMESPACE_END
 
-#ifdef MIST_WINDOWS
+#if defined MIST_WINDOWS
 #include "WindowsPluginImpl.inl"
+#elif defined MIST_MAC
+#include "OSXPluginImpl.inl"
 #endif
